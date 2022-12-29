@@ -1,9 +1,12 @@
-require("dotenv").config();
-const express = require("express");
-const serverless = require("serverless-http");
+import * as dotenv from "dotenv";
+import express, { Router } from "express";
+import serverless from "serverless-http";
 
+const env = dotenv;
 const app = express();
-const router = express.Router();
+const router = Router();
+
+env.config();
 
 router.get("/", (req, res) => {
   res.json({
@@ -11,6 +14,8 @@ router.get("/", (req, res) => {
   });
 });
 
+router.get("v1/create-image");
+
 app.use("/.netlify/functions/api", router);
 
-module.exports.handler = serverless(app);
+export const handler = serverless(app);
