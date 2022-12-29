@@ -15,12 +15,6 @@ app.use(cors());
 app.use(express.json());
 app.use("/.netlify/functions/api", router);
 
-router.get("/", (req, res) => {
-  res.json({
-    hello: "world!!",
-  });
-});
-
 router.post("/v1/create", async (req, res) => {
   try {
     const prompt = req.body.prompt;
