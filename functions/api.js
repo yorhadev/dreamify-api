@@ -1,16 +1,18 @@
 import * as dotenv from "dotenv";
 import express, { Router } from "express";
 import serverless from "serverless-http";
+import { Configuration, OpenAIApi } from "openai";
 
-const env = dotenv;
+dotenv.config();
+
 const app = express();
 const router = Router();
-
-env.config();
+const configuration = new Configuration({ apiKey: process.env.OPENAI });
+const openai = new OpenAIApi(configuration);
 
 router.get("/", (req, res) => {
   res.json({
-    hello: process.env.OPENAI,
+    hello: "world",
   });
 });
 
