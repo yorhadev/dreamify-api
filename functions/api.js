@@ -21,7 +21,7 @@ router.get("/", (req, res) => {
   });
 });
 
-router.get("v1/create", async (req, res) => {
+router.get("/v1/create", async (req, res) => {
   res.json({
     firstName: "lalalala",
     lastName: "lolololo",
