@@ -4,7 +4,7 @@ Dreamify API is a free **but limited** wrapper around [OpenAI API](https://beta.
 
 ## Why?
 
-When I wanted to design a portfolio project prototype that showed my knowledge as a Full-Stack developer, so I decided to create this simple web service with NodeJs (express).
+I wanted to design a portfolio project prototype that showed my knowledge as a Full-Stack developer, so I decided to create this simple web service with NodeJs (express).
 
 ## How to
 
