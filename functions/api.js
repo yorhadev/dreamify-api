@@ -1,3 +1,6 @@
+import * as dotenv from "dotenv";
+dotenv.config();
+
 const express = require("express");
 const serverless = require("serverless-http");
 
@@ -6,7 +9,7 @@ const router = express.Router();
 
 router.get("/", (req, res) => {
   res.json({
-    hello: "world",
+    hello: process.env.OPENAI,
   });
 });
 
