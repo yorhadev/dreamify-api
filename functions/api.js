@@ -22,9 +22,9 @@ router.get("/", (req, res) => {
 });
 
 router.post("/v1/create", async (req, res) => {
-  const prompt = req;
+  const prompt = req.body.prompt;
 
-  res.send({ image: prompt });
+  res.send({ prompt });
 });
 
 export const handler = serverless(app);
