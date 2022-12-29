@@ -22,13 +22,16 @@ router.get("/", (req, res) => {
 });
 
 router.post("/v1/create", async (req, res) => {
-  const prompt = req.body.prompt;
-  const n = 1;
-  const size = "1024x1024";
-  const response = await openai.createImage({ prompt, n, size });
-  const image = response.data.data[0].url;
-
-  res.send({ image });
+  try {
+    const prompt = req.body.prompt;
+    const n = 1;
+    const size = "1024x1024";
+    const response = await openai.createImage({ prompt, n, size });
+    const image = response.data.data[0].url;
+    res.send({ image });
+  } catch (e) {
+    res.send({ image: "" });
+  }
 });
 
 export const handler = serverless(app);
