@@ -8,11 +8,14 @@ I wanted to design a portfolio project prototype that showed my knowledge as a F
 
 ## How to
 
-you can fetch data with any kind of methods you know(fetch API, Axios, jquery, ajax,...)
+you can fetch data with any kind of methods you know (fetch API, Axios, jquery, ajax,...)
 
 ### Create image
 
 ```js
-// TODO
-fetch("...");
+const response = await fetch("https://dreamify-api.netlify.app/.netlify/functions/api/v1/create", {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({ prompt: data.get("prompt") }),
+});
 ```

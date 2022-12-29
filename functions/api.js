@@ -24,7 +24,9 @@ router.post("/v1/create", async (req, res) => {
     const image = response.data.data[0].url;
     res.send({ image });
   } catch (e) {
-    res.send({ image: "" });
+    res
+      .status(500)
+      .send(e?.response.data.error.message || "Something went wrong");
   }
 });
 
