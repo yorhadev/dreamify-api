@@ -17,7 +17,7 @@ app.use("/.netlify/functions/api", router);
 
 router.get("/", (req, res) => {
   res.json({
-    hello: "worldz",
+    hello: "world!!",
   });
 });
 
