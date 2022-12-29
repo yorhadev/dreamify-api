@@ -1,6 +1,4 @@
-import * as dotenv from "dotenv";
-dotenv.config();
-
+require("dotenv").config();
 const express = require("express");
 const serverless = require("serverless-http");
 
